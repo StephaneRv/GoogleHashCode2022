@@ -1,0 +1,10 @@
+Submission file		Description
+
+3					three projects are planned
+WebServer			assignments for project WebServer
+Bob Anna            Bob → first role, Anna →  second role
+Logging			    assignments for project Logging
+Anna                Anna → first role
+WebChat			    assignments for project WebChat
+Maria Bob           Maria → first role, Bob → second role
+

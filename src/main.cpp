@@ -3,12 +3,40 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <DataStructs.hpp>
 #include "Parser.hpp"
+
+std::string getNumber(int amount)
+{
+    switch (amount)
+    {
+    case 3:
+        return "three";
+        break;
+    
+    default:
+        break;
+    }
+    return "ui";
+}
+
+void submissionFile(std::vector<Project> projects, std::vector<User> users) 
+{
+    std::ofstream newFile;
+    
+    newFile.open("./submission.txt");
+    newFile << "Submission file\t\tDescription\n\n" << projects.size() << "\t\t\t\t\t" << getNumber(projects.size()) <<" projects are planned" << std::endl;
+    for (std::size_t i = 0; i < projects.size(); i++) {
+        newFile << projects[i].name << "\t\t\tassignments for project " << projects[i].name << '\n';
+    }
+	newFile.close();
+}
 
 int main(UNUSED int ac, UNUSED char *av[])
 {
     std::ifstream inFile;
+    
     std::string line;
 
     inFile.open("datasets/a_an_example.in.txt");
@@ -63,6 +91,6 @@ int main(UNUSED int ac, UNUSED char *av[])
         // }
         // std::cout << std::endl;
     }
-
+    submissionFile(projects, users);
     return 0;
 }
