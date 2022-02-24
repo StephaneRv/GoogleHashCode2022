@@ -1,4 +1,5 @@
 SRC	=	src/main.cpp \
+		src/Parser.cpp \
 
 OBJ		=	$(SRC:.cpp=.o)
 
